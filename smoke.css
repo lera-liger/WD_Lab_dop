@@ -1,0 +1,99 @@
+.smoke-container {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+}
+
+.smoke {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(180,120,255,0.7), rgba(0,0,0,0));
+  border-radius: 50%;
+  animation: smoke-rise 6s infinite ease-out;
+  opacity: 0;
+}
+
+.smoke:nth-child(2) { animation-delay: 2s; }
+.smoke:nth-child(3) { animation-delay: 4s; }
+
+@keyframes smoke-rise {
+  0% {
+    transform: translate(-50%, 0) scale(0.5);
+    opacity: 0.2;
+  }
+  40% {
+    transform: translate(-50%, -40px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -140px) scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* ======================================================
+   CONTACT FORM — RESPONSIVE
+====================================================== */
+
+/* Планшеты */
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 6%;
+  }
+
+  .contact-form {
+    max-width: 520px;
+    gap: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+    padding: 14px 16px;
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+  }
+
+  .contact .cta-btn {
+    font-size: 18px;
+    padding: 16px 32px;
+  }
+}
+
+/* Мобильные */
+@media (max-width: 480px) {
+  .contact {
+    padding: 50px 20px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 13px 14px;
+  }
+
+  .contact-form textarea {
+    min-height: 110px;
+  }
+
+  .contact .cta-btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 17px;
+    padding: 15px;
+  }
+}
